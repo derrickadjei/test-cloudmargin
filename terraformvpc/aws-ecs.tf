@@ -1,3 +1,3 @@
 resource "aws_ecs_cluster" "test-ecs-cluster" {
-  name = "testECS"
+  name = "${var.ecs_cluster}"
 }

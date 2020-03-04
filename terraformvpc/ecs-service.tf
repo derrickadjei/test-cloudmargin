@@ -3,11 +3,11 @@ resource "aws_ecs_service" "test-ecs-service" {
   	iam_role        = "${aws_iam_role.ecs-service-role.name}"
   	cluster         = "${aws_ecs_cluster.test-ecs-cluster.id}"
   	task_definition = "${aws_ecs_task_definition.devtest.family}:${max("${aws_ecs_task_definition.devtest.revision}", "${data.aws_ecs_task_definition.devtest.revision}")}"
-  	desired_count   = 2
+  	desired_count   = 4
 
   	load_balancer {
     	target_group_arn  = "${aws_alb_target_group.ecs-target-group.arn}"
-    	container_port    = 80
-    	container_name    = "devtest"
+    	container_port    = 8080
+    	container_name    = "cmtest"
 	}
 }

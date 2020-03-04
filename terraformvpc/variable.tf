@@ -1,21 +1,16 @@
- variable "aws_access_key_id" {
-   description = "AWS access key"
- }
-
- variable "aws_secret_access_key" {
-   description = "AWS secret access key"
- }
 
  variable "ecs_cluster" {
    description = "ECS cluster name"
+   default = "cmtest"
  }
 
  variable "ecs_key_pair_name" {
    description = "EC2 instance key pair name"
+   default ="cmtestkey"
  }
 
 variable "image_id" {
-  default =" "
+  default = " "
 }
 
  variable "region" {
